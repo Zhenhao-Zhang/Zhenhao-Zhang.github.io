@@ -21,7 +21,7 @@ redirect_from:
 
 I am Current a Second-year Master student in ShanghaiTech University under the supervision of [Prof. Ye Shi](https://shiye21.github.io) and [Prof. Jingya Wang](https://faculty.sist.shanghaitech.edu.cn/faculty/wangjingya/),who are experts in the field of Machine Learning and Computer Vision.I get B.E. Degree in China University of Petroleum under the supervision of [Prof. Yunquan Song](http://sci.upc.edu.cn/2025/0507/c6755a461574/page.htm), who is an expert in the field of High-Dimensional Statistic.
 
-My Research interest include MLLM and Computer Vision. Now I focus on the topic of Digital Human, Motion Generation and Robot Manipulation. I am looking for Collaborators and Friends. Feel free to contact me if you are interested in these fantasic topics!
+My Research interest include MLLM and Computer Vision. Now I focus on the topic of Motion Generation and Robot Manipulation. I am looking for Collaborators and Friends. Feel free to contact me if you are interested in these fantasic topics!
 
 
 Email :zhangzhh2024 AT shanghaitech DOT edu DOT cn
