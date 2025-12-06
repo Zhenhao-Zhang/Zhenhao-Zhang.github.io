@@ -30,6 +30,7 @@ Email :zhangzhh2024 AT shanghaitech DOT edu DOT cn
 
 # ✨Seeking
 **<font color='red'>I am seeking for positions! If you are interested, please contact me any time!</font>**
+
 **<font color='red'>我正在寻找以下机会！如果你对我的经历感兴趣，请随时联系我！</font>**
 
 - **<font color='red'>I am seeking PhD Position for 27 Fall in MLLM and Computer Vision!</font>**
