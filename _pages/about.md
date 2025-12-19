@@ -26,16 +26,6 @@ My Research interest include MLLM and Computer Vision. Now I focus on the topic 
 
 Email :zhangzhh2024 AT shanghaitech DOT edu DOT cn
 
-
-
-# ✨Seeking
-
-- **<font color='red'>I am seeking PhD Position for 27 Fall in MLLM and Computer Vision!</font>**
-- **<font color='red'>I am seeking Intern Position for 26 Summer in MLLM and Computer Vision!</font>**
-
-
-
-
 # 🔥 News
 - *2025.11*:[**SDEval**](https://github.com/hq-King/SDEval) accepted by **AAAI 2026**!
 - *2025.09*:[**OpenHOI**](http://openhoi.github.io) accepted by **NeurIPS 2025 as <font color='red'>Oral(77/21575,0.3%)</font>**!
