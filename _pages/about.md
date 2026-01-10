@@ -137,7 +137,6 @@ School of Information Science and Technology
 
 Major: M.S. in **Computer Science**
 
-MoE Key Laboratory of Intelligent Perception and Human Machine Collaboration
 </div>
 </div>
 
@@ -152,7 +151,7 @@ School of Computer Science and Technology
 
 Major: B.E. in **Computer Science**
 
-National Characteristic Demonstration Software College
+
 
 </div>
 </div>
