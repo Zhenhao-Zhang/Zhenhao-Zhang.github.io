@@ -96,6 +96,20 @@ Shutong Ding, Ke Hu, **Zhenhao Zhang**, Kan Ren, Weinan Zhang, Jingyi Yu, Jingya
 
 # 💻 Selected Internships
 
+<div class='paper-box'><div class='paper-box-image'><div><img src='images/tsinghua.png' alt="sym" width="95%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+<span style="font-size:18px;">**Department of Automatic, Tsinghua University**</span>
+
+*2025.10 - now*
+
+Visting Student. Advisor: Prof. Yebin Liu
+
+Project: Motion Generation, Hand-Object Interaction
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><img src='images/signalplus.png' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
