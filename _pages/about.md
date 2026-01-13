@@ -23,7 +23,6 @@ I am Current a Second-year Master student in ShanghaiTech University under the s
 
 My Research interest include MLLM and Computer Vision. Now I focus on the topic of Motion Generation and Cross-Embodiment Manipulation. I am looking for Collaborators and Friends. Feel free to contact me if you are interested in these fantasic topics!
 
-**<font color='red'>I am seeking Intern Positions for MLLM Foundation Models for 26 Fall Summer Internship! Feel free to contact me if you are interested!</font>**
 
 Email :zhangzhh2024 AT shanghaitech DOT edu DOT cn
 
