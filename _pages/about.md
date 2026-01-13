@@ -19,10 +19,11 @@ redirect_from:
 
 <!-- ![header](https://capsule-render.vercel.app/api?type=waving&height=300&color=gradient&text=Zhenhao Zhang 章震豪&section=header&reversal=false&textBg=false&descAlign=50&descAlignY=50&animation=fadeIn) -->
 
-<!-- I am Current a Second-year Master student in ShanghaiTech University under the supervision of [Prof. Ye Shi](https://shiye21.github.io) and [Prof. Jingya Wang](https://faculty.sist.shanghaitech.edu.cn/faculty/wangjingya/),who are experts in the field of Machine Learning and Computer Vision.I get B.E. Degree in China University of Petroleum under the supervision of [Prof. Yunquan Song](http://sci.upc.edu.cn/2025/0507/c6755a461574/page.htm), who is an expert in the field of High-Dimensional Statistic. -->
+I am Current a Second-year Master student in ShanghaiTech University under the supervision of [Prof. Ye Shi](https://shiye21.github.io) and [Prof. Jingya Wang](https://faculty.sist.shanghaitech.edu.cn/faculty/wangjingya/),who are experts in the field of Computer Vision.I get B.E. Degree in China University of Petroleum under the supervision of [Prof. Yunquan Song](http://sci.upc.edu.cn/2025/0507/c6755a461574/page.htm), who is an expert in the field of High-Dimensional Statistic.
 
-I am Current a Second-year Master student in ShanghaiTech University. I get B.E. Degree in China University of Petroleum. My Research interest include MLLM and Computer Vision. Now I focus on the topic of Motion Generation and Cross-Embodiment Manipulation. I am looking for Collaborators and Friends. Feel free to contact me if you are interested in these fantasic topics!
+My Research interest include MLLM and Computer Vision. Now I focus on the topic of Motion Generation and Cross-Embodiment Manipulation. I am looking for Collaborators and Friends. Feel free to contact me if you are interested in these fantasic topics!
 
+**<font color='red'>I am seeking Intern Positions for MLLM Foundation Models for 26 Fall Summer Internship! Feel free to contact me if you are interested!</font>**
 
 Email :zhangzhh2024 AT shanghaitech DOT edu DOT cn
 
