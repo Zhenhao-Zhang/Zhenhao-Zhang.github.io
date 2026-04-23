@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Full Publications | Zhenhao Zhang</title>
+    <link rel="icon" type="image/jpg" href="images/me.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding-top: 64px;
+        }
+
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 48px;
+            background: rgba(248, 249, 250, 0.96);
+            border-bottom: 1px solid #edf1f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            z-index: 999;
+        }
+
+        .top-nav a {
+            color: #7f8c8d;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 2px;
+            border-bottom: 1.5px solid transparent;
+            transition: color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .top-nav a:hover {
+            color: #4f5d6b;
+        }
+
+        .top-nav a.active {
+            color: #2c3e50;
+            border-bottom-color: #b9c5d1;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .page-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #34495e;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            padding-bottom: 10px;
+            border-left: 4px solid #5dade2;
+            padding-left: 15px;
+        }
+
+        .year-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 28px 0 14px;
+            padding-bottom: 8px;
+            border-left: 4px solid #5dade2;
+            padding-left: 15px;
+        }
+
+        .publication-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 28px;
+        }
+
+        .publication-table thead {
+            background: #eef5fb;
+        }
+
+        .publication-table th,
+        .publication-table td {
+            text-align: left;
+            padding: 14px 16px;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .publication-table th {
+            color: #34495e;
+            font-weight: 700;
+        }
+
+        .publication-table tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        .publication-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .title-cell {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .venue {
+            color: #27ae60;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .venue.highlight {
+            color: #e74c3c;
+        }
+
+        a {
+            color: #5dade2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                padding: 40px 14px;
+            }
+
+            .top-nav {
+                gap: 10px;
+                height: auto;
+                min-height: 48px;
+                padding: 8px 10px;
+                flex-wrap: wrap;
+            }
+
+            body {
+                padding-top: 74px;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .publication-table,
+            .publication-table thead,
+            .publication-table tbody,
+            .publication-table tr,
+            .publication-table th,
+            .publication-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .publication-table thead {
+                display: none;
+            }
+
+            .publication-table tr {
+                border-bottom: 1px solid #ecf0f1;
+                padding: 10px 0;
+            }
+
+            .publication-table td {
+                border-bottom: none;
+                padding: 6px 12px;
+            }
+
+            .publication-table td::before {
+                content: attr(data-label) ": ";
+                font-weight: 700;
+                color: #34495e;
+            }
+
+            .venue {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="full_publication.html" class="active">Publications</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="page-title">Full Publication List</div>
+        </header>
+
+        <p class="note">* Equal contribution. † Corresponding author.</p>
+
+        <h3 class="year-title">2026</h3>
+        <table class="publication-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Venue</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Title" class="title-cell">UniHM: Unified Dexterous Hand Manipulation with Vision Language Model</td>
+                    <td data-label="Authors"><strong>Zhenhao Zhang*</strong>, Jiaxin Liu*, Ye Shi†, Jingya Wang†</td>
+                    <td data-label="Venue"><span class="venue">ICLR 2026 Poster</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2603.00732">Paper</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Title" class="title-cell">SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models</td>
+                    <td data-label="Authors">Hanqing Wang, Yuan Tian, Mingyu Liu, <strong>Zhenhao Zhang</strong>, Xiangyang Zhu†</td>
+                    <td data-label="Venue"><span class="venue">AAAI 2026 Poster</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2508.06142">Paper</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Title" class="title-cell">EmotionDet: Weakly Supervised Emotional Highlight Selection for Interpretable Multimodal Affective Analysis</td>
+                    <td data-label="Authors">Peiqi He*, <strong>Zhenhao Zhang*</strong>, Yixiang Zhang, Ziyu Cheng, Shaoliang Peng†</td>
+                    <td data-label="Venue"><span class="venue">Preprint</span></td>
+                    <td data-label="Links"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="year-title">2025</h3>
+        <table class="publication-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Venue</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Title" class="title-cell">OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Model</td>
+                    <td data-label="Authors"><strong>Zhenhao Zhang</strong>, Ye Shi†, Lingxiao Yang, Suting Ni, Qi Ye, Jingya Wang†</td>
+                    <td data-label="Venue"><span class="venue highlight">NeurIPS 2025 Oral</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2505.18947">Paper</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Title" class="title-cell">Generalizable Operating Room Expert with Multimodal Enchance</td>
+                    <td data-label="Authors">Peiqi He*, <strong>Zhenhao Zhang*</strong>, Yixiang Zhang, Jiaxin Liu, Xiongjun Zhao†, Shaoliang Peng†</td>
+                    <td data-label="Venue"><span class="venue">Preprint</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2508.08199">Paper</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Title" class="title-cell">Diffusion Models are Open-World Affordance Learners: Leveraging Generative Priors for 3D Affordance Learning</td>
+                    <td data-label="Authors">Hanqing Wang*, <strong>Zhenhao Zhang*</strong>, Kaiyang Ji*, Mingyu Liu, Wenti Yin, Yuchao Chen, Zhirui Liu, Xiangyu Zeng, Tianxiang Gui, Hangxing Zhang, Jiahao Yuan, Zhiqing Cui, Jiaxin Liu, Zhiyuan Ma, Hui Xiong†</td>
+                    <td data-label="Venue"><span class="venue">Preprint</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2508.01651">Paper</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Title" class="title-cell">HOID-R1: Reinforcement Learning for Open-World Human-Object Interaction Detection Reasoning with Multimodal Large Language Model</td>
+                    <td data-label="Authors"><strong>Zhenhao Zhang*</strong>, Hanqing Wang*, Xiangyu Zeng*, Ziyu Cheng, Jiaxin Liu, Haoyu Yan, Zhirui Liu, Kaiyang Ji, Tianxiang Gui, Ke Hu, Kangyi Chen, Yahao Fan, Mokai Pan</td>
+                    <td data-label="Venue"><span class="venue">Preprint</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2508.11350">Paper</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="year-title">2024</h3>
+        <table class="publication-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Venue</th>
+                    <th>Links</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Title" class="title-cell">Diffusion-based Reinforcement Learning via Q-weighted Variational Policy Optimization</td>
+                    <td data-label="Authors">Shutong Ding, Ke Hu, <strong>Zhenhao Zhang</strong>, Kan Ren, Weinan Zhang, Jingyi Yu, Jingya Wang, Ye Shi†</td>
+                    <td data-label="Venue"><span class="venue">NeurIPS 2024 Poster</span></td>
+                    <td data-label="Links"><a href="https://arxiv.org/abs/2405.16173">Paper</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
