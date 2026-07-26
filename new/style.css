@@ -72,6 +72,7 @@ h1 em { color: var(--blue); font-weight: 400; }
 .prose { max-width: 780px; }
 .prose > p { margin: 0 0 22px; font-family: var(--serif); font-size: clamp(18px, 2vw, 22px); line-height: 1.65; }
 .prose a { color: var(--blue); text-decoration-color: color-mix(in srgb, var(--blue) 35%, transparent); text-underline-offset: 4px; }
+.prose .collaboration-note { color: #c43c35; font-family: var(--sans); font-size: 14px; }
 .research-statement { margin-top: 38px; padding: 22px 24px; border-left: 3px solid var(--gold); background: var(--surface); }
 .research-statement span { color: var(--muted); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
 .research-statement p { margin: 6px 0 0; font-weight: 700; }
