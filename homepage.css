@@ -91,12 +91,12 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .filter button { border: 0; padding: 7px 14px; border-radius: 999px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; }
 .filter button.active { background: var(--ink); color: var(--paper); }
 .publication-list { border-top: 1px solid var(--line); }
-.publication { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 40px; padding-block: 34px; border-bottom: 1px solid var(--line); transition: opacity .25s, transform .25s; }
+.publication { display: grid; grid-template-columns: minmax(280px, .85fr) minmax(0, 1.3fr); gap: 40px; padding-block: 34px; border-bottom: 1px solid var(--line); transition: opacity .25s, transform .25s; }
 .publication[hidden] { display: none; }
-.publication-media { position: relative; align-self: start; display: grid; place-items: center; overflow: hidden; width: 100%; aspect-ratio: 1 / 1; padding: 12px; background: #fff; border: 1px solid var(--line); text-decoration: none; }
-.publication-media img { width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: contain; transition: transform .45s ease; }
+.publication-media { position: relative; align-self: start; display: block; overflow: hidden; min-height: 190px; background: #e8e7e2; text-decoration: none; }
+.publication-media img { width: 100%; height: 100%; min-height: 190px; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .45s ease; }
 .publication:hover .publication-media img { transform: scale(1.025); }
-.badge { position: absolute; left: 12px; top: 12px; padding: 6px 10px; background: rgba(17, 20, 18, .88); color: white; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.badge { position: absolute; left: 0; top: 0; padding: 6px 10px; background: rgba(17, 20, 18, .88); color: white; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .featured .badge { background: var(--blue); }
 .pub-index { margin: 0 0 7px; color: var(--blue); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 .publication h3 { margin: 0; font-family: var(--serif); font-size: clamp(22px, 2.5vw, 31px); font-weight: 400; line-height: 1.22; letter-spacing: -.03em; }
@@ -113,7 +113,7 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-left: 282px; }
 .column-label { margin: 0 0 20px; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .experience-item { display: grid; grid-template-columns: 74px 1fr; gap: 18px; padding: 22px 0; border-top: 1px solid var(--line); }
-.logo-box { width: 56px; height: 56px; display: grid; place-items: center; padding: 9px; background: #fff; border: 1px solid #e6e3dc; }
+.logo-box { height: 56px; display: grid; place-items: center; padding: 9px; background: #fff; border: 1px solid #e6e3dc; }
 .logo-box img { max-height: 38px; object-fit: contain; }
 .experience-item time { color: var(--blue); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
 .experience-item h3 { margin: 3px 0 2px; font-family: var(--serif); font-size: 17px; font-weight: 600; }
@@ -196,7 +196,6 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
   .filter { width: 100%; overflow-x: auto; }
   .filter button { flex: 1; white-space: nowrap; }
   .publication { grid-template-columns: 1fr; gap: 22px; }
-  .publication-media { width: min(100%, 320px); }
   .experience-section, .recognition { padding-block: 62px; }
   .experience-grid, .recognition-grid { margin-left: 0; }
   .footer-inner { grid-template-columns: 1fr; align-content: center; gap: 25px; padding-block: 48px; }
@@ -213,5 +212,6 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
   .hero-links .button { flex: 1; }
   .hero-links .primary { flex-basis: 100%; }
   .news-list li { grid-template-columns: 68px 1fr; gap: 12px; }
+  .publication-media, .publication-media img { min-height: 170px; }
   .experience-item { grid-template-columns: 60px 1fr; gap: 14px; }
 }
