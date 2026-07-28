@@ -59,7 +59,7 @@ h1 em { color: var(--blue); font-weight: 400; }
 .profile-card { position: relative; }
 .portrait-wrap { position: relative; padding: 12px; border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); transform: rotate(1.5deg); }
 .portrait-wrap::before { content: ''; position: absolute; width: 74px; height: 20px; top: -11px; left: 50%; translate: -50%; background: color-mix(in srgb, var(--gold) 55%, transparent); transform: rotate(-3deg); }
-.portrait-wrap img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; filter: saturate(.88) contrast(1.03); }
+.portrait-wrap img { aspect-ratio: 1 / 1.08; object-fit: cover; filter: saturate(.88) contrast(1.03); }
 .portrait-label { position: absolute; right: 22px; bottom: 22px; padding: 6px 10px; background: rgba(20, 22, 21, .82); color: #fff; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .profile-meta { padding: 24px 4px 0; }
 .profile-meta p, .profile-meta span { margin: 0; color: var(--muted); font-size: 12px; }
