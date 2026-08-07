@@ -17,7 +17,7 @@ const publications = [...document.querySelectorAll('.publication')];
 const filterButtons = document.querySelectorAll('.filter button');
 const sortButton = document.querySelector('.sort-control');
 let currentPublicationFilter = 'selected';
-let sortByNewestYear = false;
+let sortByNewsDate = false;
 
 publications.forEach((publication, index) => {
   publication.dataset.originalOrder = String(index);
@@ -25,8 +25,8 @@ publications.forEach((publication, index) => {
 
 const updatePublications = () => {
   const orderedPublications = [...publications].sort((a, b) => {
-    if (sortByNewestYear) {
-      return Number(b.dataset.year) - Number(a.dataset.year) || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+    if (sortByNewsDate) {
+      return b.dataset.newsDate.localeCompare(a.dataset.newsDate) || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
     }
     return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
   });
@@ -52,7 +52,7 @@ filterButtons.forEach((button) => {
 });
 
 sortButton.addEventListener('click', () => {
-  sortByNewestYear = true;
+  sortByNewsDate = true;
   sortButton.classList.add('active');
   sortButton.setAttribute('aria-pressed', 'true');
   updatePublications();
