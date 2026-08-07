@@ -127,9 +127,10 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .experience-section { padding-block: 90px; border-bottom: 1px solid var(--line); }
 .experience-section > .section-kicker { margin-bottom: 42px; }
 .experience-grid { width: 100%; }
-.experience-column { display: grid; gap: 18px; }
-.experience-item { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 28px; min-height: 150px; padding: 28px 32px; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 10px 32px rgba(27, 31, 38, .045); }
-.logo-box { width: 104px; height: 88px; display: grid; place-items: center; padding: 14px; background: #fff; border: 1px solid #e6e3dc; }
+.experience-column { display: grid; }
+.experience-item { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 28px; min-height: 150px; padding: 28px 0; border-top: 1px solid var(--line); }
+.experience-item:last-child { border-bottom: 1px solid var(--line); }
+.logo-box { width: 104px; height: 88px; display: grid; place-items: center; padding: 14px; }
 .logo-box img { max-height: 58px; object-fit: contain; }
 .experience-item time { color: var(--blue); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
 .experience-item h3 { margin: 5px 0 4px; font-family: var(--serif); font-size: 23px; font-weight: 600; }
@@ -139,11 +140,10 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .recognition.honors-section { border-bottom: 1px solid var(--line); }
 .recognition > .section-kicker { margin-bottom: 42px; }
 .recognition-grid { width: 100%; }
-.recognition-card { padding: 30px 34px; border: 1px solid var(--line); background: var(--surface); }
-.recognition-card.accent { border-top: 3px solid var(--gold); }
+.recognition-card { padding: 0; }
 .recognition-card ul { list-style: none; margin: 0; padding: 0; }
 .recognition-card li { display: grid; grid-template-columns: 92px 1fr; gap: 18px; padding: 16px 0; border-top: 1px solid var(--line); font-size: 14px; }
-.recognition-card li:first-child { border-top: 0; }
+.recognition-card li:last-child { border-bottom: 1px solid var(--line); }
 .service-card li { grid-template-columns: 156px 1fr; }
 .recognition-card li span { color: var(--blue); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
 
@@ -234,6 +234,6 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
   .logo-box { width: 74px; height: 68px; padding: 10px; }
   .logo-box img { max-height: 46px; }
   .experience-item h3 { font-size: 20px; }
-  .recognition-card { padding: 22px 20px; }
+  .recognition-card { padding: 0; }
   .recognition-card li, .service-card li { grid-template-columns: 1fr; gap: 5px; }
 }
