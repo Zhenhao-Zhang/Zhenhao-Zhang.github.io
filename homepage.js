@@ -12,21 +12,41 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('zhenhao-theme', nextTheme);
 });
 
-document.querySelectorAll('.filter button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
+const publicationList = document.querySelector('.publication-list');
+const publications = [...document.querySelectorAll('.publication')];
+const filterButtons = document.querySelectorAll('.filter button');
+let currentPublicationFilter = 'selected';
 
-    document.querySelectorAll('.filter button').forEach((item) => {
+publications.forEach((publication, index) => {
+  publication.dataset.originalOrder = String(index);
+});
+
+const updatePublications = () => {
+  const orderedPublications = [...publications].sort((a, b) =>
+    Number(b.dataset.year) - Number(a.dataset.year) || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder)
+  );
+
+  orderedPublications.forEach((publication) => {
+    publicationList.appendChild(publication);
+    publication.hidden = currentPublicationFilter === 'selected' && publication.dataset.selected !== 'true';
+  });
+};
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    currentPublicationFilter = button.dataset.filter;
+
+    filterButtons.forEach((item) => {
       const selected = item === button;
       item.classList.toggle('active', selected);
       item.setAttribute('aria-pressed', String(selected));
     });
 
-    document.querySelectorAll('.publication').forEach((publication) => {
-      publication.hidden = filter !== 'all' && publication.dataset.category !== filter;
-    });
+    updatePublications();
   });
 });
+
+updatePublications();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
