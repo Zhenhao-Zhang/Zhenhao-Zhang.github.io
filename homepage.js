@@ -15,16 +15,21 @@ themeToggle.addEventListener('click', () => {
 const publicationList = document.querySelector('.publication-list');
 const publications = [...document.querySelectorAll('.publication')];
 const filterButtons = document.querySelectorAll('.filter button');
+const sortButton = document.querySelector('.sort-control');
 let currentPublicationFilter = 'selected';
+let sortByNewestYear = false;
 
 publications.forEach((publication, index) => {
   publication.dataset.originalOrder = String(index);
 });
 
 const updatePublications = () => {
-  const orderedPublications = [...publications].sort((a, b) =>
-    Number(b.dataset.year) - Number(a.dataset.year) || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder)
-  );
+  const orderedPublications = [...publications].sort((a, b) => {
+    if (sortByNewestYear) {
+      return Number(b.dataset.year) - Number(a.dataset.year) || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+    }
+    return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+  });
 
   orderedPublications.forEach((publication) => {
     publicationList.appendChild(publication);
@@ -44,6 +49,13 @@ filterButtons.forEach((button) => {
 
     updatePublications();
   });
+});
+
+sortButton.addEventListener('click', () => {
+  sortByNewestYear = true;
+  sortButton.classList.add('active');
+  sortButton.setAttribute('aria-pressed', 'true');
+  updatePublications();
 });
 
 updatePublications();

@@ -107,8 +107,9 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .filter { display: flex; gap: 6px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; }
 .filter button { border: 0; padding: 7px 14px; border-radius: 999px; background: transparent; color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; }
 .filter button.active { background: var(--ink); color: var(--paper); }
-.sort-control { display: flex; align-items: center; gap: 8px; min-height: 40px; margin: 0; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 11px; }
+.sort-control { display: flex; align-items: center; gap: 8px; min-height: 40px; margin: 0; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 11px; cursor: pointer; }
 .sort-control strong { color: var(--ink); font-weight: 700; }
+.sort-control.active { border-color: var(--blue); color: var(--blue); }
 .publication-list { border-top: 1px solid var(--line); }
 .publication { display: grid; grid-template-columns: minmax(280px, .85fr) minmax(0, 1.3fr); gap: 40px; padding-block: 34px; border-bottom: 1px solid var(--line); transition: opacity .25s, transform .25s; }
 .publication[hidden] { display: none; }
