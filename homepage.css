@@ -128,10 +128,10 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .experience-section > .section-kicker { margin-bottom: 42px; }
 .experience-grid { width: 100%; }
 .experience-column { display: grid; }
-.experience-item { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 28px; min-height: 150px; padding: 28px 0; border-top: 1px solid var(--line); }
+.experience-item { display: grid; grid-template-columns: 148px 1fr; align-items: center; gap: 32px; min-height: 174px; padding: 30px 0; border-top: 1px solid var(--line); }
 .experience-item:last-child { border-bottom: 1px solid var(--line); }
-.logo-box { width: 104px; height: 88px; display: grid; place-items: center; padding: 14px; }
-.logo-box img { max-height: 58px; object-fit: contain; }
+.logo-box { width: 148px; height: 118px; display: grid; place-items: center; padding: 10px; }
+.logo-box img { width: 100%; max-height: 96px; object-fit: contain; }
 .experience-item time { color: var(--blue); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
 .experience-item h3 { margin: 5px 0 4px; font-family: var(--serif); font-size: 23px; font-weight: 600; }
 .experience-item p { margin: 0; color: var(--muted); font-size: 14px; }
@@ -230,9 +230,9 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
   .hero-links .primary { flex-basis: 100%; }
   .news-list li { grid-template-columns: 68px 1fr; gap: 12px; }
   .publication-media, .publication-media img { min-height: 170px; }
-  .experience-item { grid-template-columns: 74px 1fr; gap: 18px; min-height: 132px; padding: 22px 20px; }
-  .logo-box { width: 74px; height: 68px; padding: 10px; }
-  .logo-box img { max-height: 46px; }
+  .experience-item { grid-template-columns: 92px 1fr; gap: 18px; min-height: 140px; padding: 22px 0; }
+  .logo-box { width: 92px; height: 78px; padding: 6px; }
+  .logo-box img { max-height: 66px; }
   .experience-item h3 { font-size: 20px; }
   .recognition-card { padding: 0; }
   .recognition-card li, .service-card li { grid-template-columns: 1fr; gap: 5px; }
