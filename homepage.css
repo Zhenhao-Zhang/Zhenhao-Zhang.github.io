@@ -126,9 +126,8 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 
 .experience-section { padding-block: 90px; border-bottom: 1px solid var(--line); }
 .experience-section > .section-kicker { margin-bottom: 42px; }
-.experience-grid { margin-left: 282px; }
+.experience-grid { width: 100%; }
 .experience-column { display: grid; gap: 18px; }
-.column-label { margin: 0 0 4px; color: var(--muted); font-size: 12px; font-weight: 750; letter-spacing: .07em; }
 .experience-item { display: grid; grid-template-columns: 104px 1fr; align-items: center; gap: 28px; min-height: 150px; padding: 28px 32px; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 10px 32px rgba(27, 31, 38, .045); }
 .logo-box { width: 104px; height: 88px; display: grid; place-items: center; padding: 14px; background: #fff; border: 1px solid #e6e3dc; }
 .logo-box img { max-height: 58px; object-fit: contain; }
@@ -139,7 +138,7 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 .recognition { padding-block: 82px; }
 .recognition.honors-section { border-bottom: 1px solid var(--line); }
 .recognition > .section-kicker { margin-bottom: 42px; }
-.recognition-grid { margin-left: 282px; }
+.recognition-grid { width: 100%; }
 .recognition-card { padding: 30px 34px; border: 1px solid var(--line); background: var(--surface); }
 .recognition-card.accent { border-top: 3px solid var(--gold); }
 .recognition-card ul { list-style: none; margin: 0; padding: 0; }
@@ -194,7 +193,6 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr 260px; gap: 44px; }
   .section-grid { grid-template-columns: 170px 1fr; gap: 34px; }
-  .experience-grid, .recognition-grid { margin-left: 204px; grid-template-columns: 1fr; gap: 28px; }
   .year-section { grid-template-columns: 160px minmax(0, 1fr); gap: 38px; }
   .archive-item { grid-template-columns: 26px minmax(0, 1fr) 116px; }
   .archive-links { grid-column: 2; text-align: left; }
@@ -217,7 +215,6 @@ mark { padding: 2px 6px; background: color-mix(in srgb, var(--gold) 38%, transpa
   .filter button { flex: 1; white-space: nowrap; }
   .publication { grid-template-columns: 1fr; gap: 22px; }
   .experience-section, .recognition { padding-block: 62px; }
-  .experience-grid, .recognition-grid { margin-left: 0; }
   .footer-inner { grid-template-columns: 1fr; align-content: center; gap: 25px; padding-block: 48px; }
   .publication-hero { padding-block: 58px 48px; }
   .publication-hero-meta { grid-template-columns: 1fr; gap: 16px; }
