@@ -1,21 +1,58 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector('.theme-toggle');
-const savedTheme = localStorage.getItem('zhenhao-theme');
+const themeColor = document.querySelector('meta[name="theme-color"]');
 
-if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  root.dataset.theme = 'dark';
-}
+const readSavedTheme = () => {
+  try {
+    return localStorage.getItem('zhenhao-theme');
+  } catch {
+    return null;
+  }
+};
 
-themeToggle.addEventListener('click', () => {
+const applyTheme = (theme) => {
+  const isDark = theme === 'dark';
+
+  if (isDark) {
+    root.dataset.theme = 'dark';
+  } else {
+    delete root.dataset.theme;
+  }
+
+  if (themeToggle) {
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
+    themeToggle.title = `Switch to ${isDark ? 'light' : 'dark'} theme`;
+
+    const icon = themeToggle.querySelector('span');
+    if (icon) icon.textContent = isDark ? '☀' : '◐';
+  }
+
+  if (themeColor) {
+    themeColor.content = isDark ? '#111311' : '#fafaf8';
+  }
+};
+
+const savedTheme = readSavedTheme();
+const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+themeToggle?.addEventListener('click', () => {
   const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  root.dataset.theme = nextTheme;
-  localStorage.setItem('zhenhao-theme', nextTheme);
+  applyTheme(nextTheme);
+
+  try {
+    localStorage.setItem('zhenhao-theme', nextTheme);
+  } catch {
+    // The visual theme still changes when storage is unavailable.
+  }
 });
 
 const publicationList = document.querySelector('.publication-list');
 const publications = [...document.querySelectorAll('.publication')];
-const filterButtons = document.querySelectorAll('.filter button');
+const filterButtons = [...document.querySelectorAll('.filter button')];
 const sortButton = document.querySelector('.sort-control');
+const publicationStatus = document.querySelector('.publication-status');
 let currentPublicationFilter = 'selected';
 let sortByNewsDate = false;
 
@@ -24,17 +61,28 @@ publications.forEach((publication, index) => {
 });
 
 const updatePublications = () => {
+  if (!publicationList) return;
+
   const orderedPublications = [...publications].sort((a, b) => {
     if (sortByNewsDate) {
-      return b.dataset.newsDate.localeCompare(a.dataset.newsDate) || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
+      return b.dataset.newsDate.localeCompare(a.dataset.newsDate)
+        || Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
     }
+
     return Number(a.dataset.originalOrder) - Number(b.dataset.originalOrder);
   });
 
+  let visibleCount = 0;
   orderedPublications.forEach((publication) => {
     publicationList.appendChild(publication);
-    publication.hidden = currentPublicationFilter === 'selected' && publication.dataset.selected !== 'true';
+    publication.hidden = currentPublicationFilter === 'selected'
+      && publication.dataset.selected !== 'true';
+    if (!publication.hidden) visibleCount += 1;
   });
+
+  if (publicationStatus) {
+    publicationStatus.textContent = `${visibleCount} shown`;
+  }
 };
 
 filterButtons.forEach((button) => {
@@ -51,23 +99,21 @@ filterButtons.forEach((button) => {
   });
 });
 
-sortButton.addEventListener('click', () => {
-  sortByNewsDate = true;
-  sortButton.classList.add('active');
-  sortButton.setAttribute('aria-pressed', 'true');
+sortButton?.addEventListener('click', () => {
+  sortByNewsDate = !sortByNewsDate;
+  sortButton.classList.toggle('active', sortByNewsDate);
+  sortButton.setAttribute('aria-pressed', String(sortByNewsDate));
+  sortButton.setAttribute(
+    'aria-label',
+    sortByNewsDate ? 'Restore curated publication order' : 'Sort publications by newest first'
+  );
+
+  const orderLabel = sortButton.querySelector('strong');
+  if (orderLabel) orderLabel.textContent = sortByNewsDate ? 'Newest' : 'Curated';
   updatePublications();
 });
 
 updatePublications();
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Zhenhao Zhang">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#fafaf8">
   <title>Zhenhao Zhang</title>
   <link rel="icon" type="image/jpeg" sizes="640x640" href="/images/me.jpg?v=2">
   <link rel="apple-touch-icon" sizes="640x640" href="/images/me.jpg?v=2">
@@ -17,46 +17,49 @@
   <header class="site-header">
     <nav class="nav shell" aria-label="Primary navigation">
       <a class="wordmark" href="#top" aria-label="Zhenhao Zhang, back to top">
-        <span class="wordmark-dot" aria-hidden="true"></span>
-        Zhenhao Zhang
+        <span class="wordmark-full">Zhenhao Zhang</span>
+        <span class="wordmark-short" aria-hidden="true">ZZ</span>
       </a>
       <div class="nav-links">
+        <a href="#about">About</a>
         <a href="#research">Research</a>
-        <a href="#internship">Internship</a>
-        <a href="#honors">Honors</a>
+        <a href="#internship">Experience</a>
       </div>
-      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch color theme">
         <span aria-hidden="true">◐</span>
       </button>
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero shell" id="top">
       <div class="hero-copy reveal">
+        <p class="eyebrow">Researcher &amp; Engineer</p>
         <h1>Zhenhao Zhang</h1>
-        <p class="lead">Video Generation and Multimodal</p>
+        <p class="lead">Video Generation · Multimodal Intelligence · Embodied AI</p>
         <div class="hero-links" aria-label="Contact and profiles">
-          <a class="button primary" href="mailto:zhangzhh2024@shanghaitech.edu.cn">Email me <span aria-hidden="true">↗</span></a>
-          <a class="button" href="https://scholar.google.com/citations?user=dV36HmYAAAAJ" target="_blank" rel="noreferrer">Scholar</a>
-          <a class="button" href="https://github.com/Zhenhao-Zhang" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button primary" href="mailto:zhangzhh2024@shanghaitech.edu.cn">Email</a>
+          <a class="button" href="https://scholar.google.com/citations?user=dV36HmYAAAAJ" target="_blank" rel="noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/Zhenhao-Zhang" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-
+      <figure class="portrait reveal">
+        <img src="/images/me.jpg?v=2" alt="Portrait of Zhenhao Zhang" width="640" height="640">
+      </figure>
     </section>
 
-    <section class="about shell section-grid reveal" aria-labelledby="about-title">
-      <div class="section-kicker"><span>01</span><h2 id="about-title">About</h2></div>
+    <section class="about shell section-grid reveal" id="about" aria-labelledby="about-title">
+      <div class="section-kicker"><h2 id="about-title">About</h2></div>
       <div class="prose">
         <p>I am a Research Intern at the Department of Automation, Tsinghua University supervised by Prof. <a href="https://scholar.google.com/citations?user=ogXIdlYAAAAJ&amp;hl=zh-CN" target="_blank" rel="noreferrer">Yebin Liu</a> from October 2025. Before that, I will recieve M.E. Degree at VDI Center leded by Prof. <a href="https://faculty.sist.shanghaitech.edu.cn/yujingyi/">Jingyi Yu</a>in ShanghaiTech University and recieved B.S. Degree at Department of Computer Science, China Univeristy of Petroleum under the supervision of Prof. <a href="https://sci.upc.edu.cn/2025/0507/c6755a461574/page.htm" target="_blank" rel="noreferrer">Yunquan Song</a>.</p>
         <p>I am now working at <a href="https://kling.ai" target="_blank" rel="noreferrer">Kling Team</a>, <a href="https://www.kuaishou.com" target="_blank" rel="noreferrer">Kuaishou Technology</a> as an intern from June 2026 on Video Generation. Before that,I worked at <a href="https://www.signalplus.com" target="_blank" rel="noreferrer">Signalplus</a> as an Intern from June 2025 to August 2025 on Quant Trading Algorithm.</p>
         <p>My research interests span <strong>Multimodal LLMs, Video Generation, and their applications in 3D vision and Embodied AI</strong>. I actively seek collaborations and friends. Feel free to contact me if you are interested in any of these areas.</p>
-        <p class="collaboration-note">我正在广泛的寻找大模型和视频生成方向的科研合作与工业界实习机会，如果您对此感兴趣，欢迎与我联系!</p>
+        <p class="collaboration-note" lang="zh-CN">我正在广泛的寻找大模型和视频生成方向的科研合作与工业界实习机会，如果您对此感兴趣，欢迎与我联系!</p>
       </div>
     </section>
 
     <section class="news shell section-grid reveal" aria-labelledby="news-title">
-      <div class="section-kicker"><span>02</span><h2 id="news-title">News</h2></div>
+      <div class="section-kicker"><h2 id="news-title">News</h2></div>
       <div class="news-panel">
         <ol class="news-list">
           <li><time datetime="2026-07">2026.07</time><p><strong>OR-Expert</strong> accepted by ACM Multimedia 2026.</p></li>
@@ -74,13 +77,14 @@
 
     <section class="research shell reveal" id="research" aria-labelledby="research-title">
       <div class="research-heading">
-        <div class="section-kicker"><span>03</span><h2 id="research-title">Publications</h2></div>
+        <div class="section-kicker"><h2 id="research-title">Publications</h2></div>
         <div class="publication-controls">
           <div class="filter" role="group" aria-label="Filter publications">
             <button class="active" type="button" data-filter="selected" aria-pressed="true">Selected</button>
             <button type="button" data-filter="all" aria-pressed="false">All</button>
           </div>
-          <button class="sort-control" type="button" aria-pressed="false"><span>Year</span><strong>Newest first</strong></button>
+          <button class="sort-control" type="button" aria-pressed="false" aria-label="Sort publications by newest first"><span>Order</span><strong>Curated</strong></button>
+          <span class="publication-status" role="status" aria-live="polite"></span>
         </div>
       </div>
 
@@ -167,7 +171,7 @@
     </section>
 
     <section class="experience-section shell reveal" id="internship" aria-labelledby="internship-title">
-      <div class="section-kicker"><span>04</span><h2 id="internship-title">Internship</h2></div>
+      <div class="section-kicker"><h2 id="internship-title">Experience</h2></div>
       <div class="experience-grid">
         <div class="experience-column">
           <article class="experience-item">
@@ -187,7 +191,7 @@
     </section>
 
     <section class="recognition honors-section shell reveal" id="honors" aria-labelledby="honors-title">
-      <div class="section-kicker"><span>05</span><h2 id="honors-title">Honors</h2></div>
+      <div class="section-kicker"><h2 id="honors-title">Honors</h2></div>
       <div class="recognition-grid">
         <div class="recognition-card">
           <ul>
@@ -200,7 +204,7 @@
     </section>
 
     <section class="recognition service-section shell reveal" id="service" aria-labelledby="service-title">
-      <div class="section-kicker"><span>06</span><h2 id="service-title">Academic service</h2></div>
+      <div class="section-kicker"><h2 id="service-title">Academic service</h2></div>
       <div class="recognition-grid">
         <div class="recognition-card service-card">
           <ul>
@@ -215,7 +219,7 @@
   <footer class="footer">
     <div class="shell footer-inner">
       <div><p class="footer-name">Zhenhao Zhang</p><p>Video Generation and Multimodal</p></div>
-      <div class="footer-links"><a href="mailto:zhangzhh2024@shanghaitech.edu.cn">Email</a><a href="https://github.com/Zhenhao-Zhang" target="_blank" rel="noreferrer">GitHub</a><a href="/">Original homepage</a></div>
+      <div class="footer-links"><a href="mailto:zhangzhh2024@shanghaitech.edu.cn">Email</a><a href="https://scholar.google.com/citations?user=dV36HmYAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="https://github.com/Zhenhao-Zhang" target="_blank" rel="noreferrer">GitHub</a></div>
       <p class="copyright">© <span id="year">2026</span></p>
     </div>
   </footer>
