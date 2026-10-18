@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zhenhao Zhang — video generation, multimodal learning and embodied AI research.">
+  <meta name="theme-color" content="#f7f8f6">
+  <title>Zhenhao Zhang · Research</title>
+  <link rel="icon" href="images/me.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg: #f7f8f6; --ink: #182622; --muted: #586762; --line: #d9dfd9; --accent: #19624d; --soft: #e8f0ea; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 'DM Sans', sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1120px, calc(100% - 80px)); margin-inline: auto; }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 10; padding: 8px 14px; background: var(--ink); color: white; }
+    .skip:focus { left: 12px; }
+    .topbar { border-bottom: 1px solid var(--line); }
+    .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font: 800 15px/1.2 'Manrope', sans-serif; letter-spacing: 0; white-space: nowrap; }
+    .nav { display: flex; flex-wrap: wrap; gap: clamp(12px, 3vw, 34px); color: var(--muted); font-size: 13px; font-weight: 700; }
+    .nav a:hover { color: var(--accent); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; align-items: center; gap: 48px; padding-block: clamp(58px, 8vw, 110px) 72px; }
+    .eyebrow, .section-label, .year { font: 700 11px/1.4 'Manrope', sans-serif; text-transform: uppercase; color: var(--accent); }
+    .eyebrow { margin: 0 0 16px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; letter-spacing: 0; }
+    h1 { font-size: clamp(46px, 6vw, 78px); line-height: 1.12; margin-bottom: 20px; font-weight: 800; }
+    .hero-lead { font-size: clamp(18px, 2vw, 24px); font-weight: 500; line-height: 1.45; margin-bottom: 18px; }
+    .hero-summary { max-width: 600px; color: var(--muted); margin-bottom: 27px; }
+    .profile-links { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 13px; font-weight: 700; }
+    .profile-links a { border-bottom: 1px solid var(--accent); padding-bottom: 3px; }
+    .portrait { width: 240px; height: 282px; object-fit: cover; object-position: center 30%; filter: grayscale(12%); }
+    .section { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 72px 82px; border-top: 1px solid var(--line); scroll-margin-top: 20px; }
+    .section-label { margin: 0; color: var(--ink); font-size: 30px; line-height: 1.25; text-transform: none; }
+    .section-body { min-width: 0; }
+    .section-body > p { max-width: 850px; color: var(--muted); }
+    .section-body > p:last-child { margin-bottom: 0; }
+    .section-body p a { color: var(--accent); text-decoration: underline; text-decoration-color: #a0bbad; text-underline-offset: 3px; }
+    .section-body strong { color: var(--ink); font-weight: 700; }
+    .note { font-size: 14px; }
+    .updates { list-style: none; padding: 0; margin: 0; }
+    .updates li { display: grid; grid-template-columns: 90px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .updates li:first-child { padding-top: 0; }
+    .updates li:last-child { border: 0; padding-bottom: 0; }
+    .updates time { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .updates p { margin: 0; }
+    .section-heading { font-size: 30px; line-height: 1.3; margin: 0 0 25px; }
+    .pub { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 32px; padding: 30px 0; border-top: 1px solid var(--line); }
+    .pub:first-of-type { padding-top: 0; border: 0; }
+    .pub img { width: 210px; height: 132px; object-fit: contain; background: #fff; border: 1px solid var(--line); }
+    .pub .year { margin: 0 0 7px; }
+    .pub h3 { font-size: 19px; line-height: 1.4; margin: 0 0 7px; font-weight: 700; }
+    .authors { font-size: 13px; line-height: 1.5; color: var(--muted); margin-bottom: 10px; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12px; font-weight: 700; color: var(--accent); }
+    .paper-links a { border-bottom: 1px solid #a0bbad; }
+    .timeline { margin: 0; padding: 0; list-style: none; }
+    .timeline li { display: grid; grid-template-columns: 132px minmax(0, 1fr); align-items: center; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
+    .timeline li:first-child { border: 0; padding-top: 0; }
+    .timeline time { display: block; color: var(--accent); font-size: 12px; font-weight: 700; }
+    .timeline img { width: 132px; height: 88px; object-fit: contain; }
+    .timeline h3 { font-size: 15px; margin-bottom: 2px; }
+    .timeline p { margin: 0; color: var(--muted); font-size: 13px; }
+    .simple-list { margin: 0; padding: 0; list-style: none; }
+    .simple-list li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .simple-list li:last-child { border: 0; }
+    .simple-list span { display: inline-block; min-width: 110px; color: var(--accent); font-size: 12px; font-weight: 700; }
+    .footer { margin-top: 18px; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 24px; padding-block: 30px; color: var(--muted); font-size: 12px; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { color: var(--ink); font-weight: 700; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .topbar-inner { min-height: 66px; align-items: flex-start; justify-content: center; flex-direction: column; padding-block: 13px; gap: 8px; }
+      .nav { gap: 16px; font-size: 12px; }
+      .hero { grid-template-columns: 1fr 112px; gap: 12px; padding-block: 52px 55px; align-items: start; }
+      h1 { font-size: clamp(36px, 8vw, 54px); }
+      .hero-lead { font-size: 17px; }
+      .portrait { width: 112px; height: 134px; }
+      .section { gap: 22px; padding-block: 46px 55px; }
+      .section-label { font-size: 25px; }
+      .pub { grid-template-columns: 126px 1fr; gap: 16px; }
+      .pub img { width: 126px; height: 90px; }
+      .pub h3 { font-size: 14px; }
+      .authors { font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .hero { grid-template-columns: 1fr; }
+      .portrait { grid-row: 1; width: 90px; height: 90px; border-radius: 50%; }
+      .pub { grid-template-columns: 1fr; gap: 12px; }
+      .pub img { width: min(100%, 280px); height: 130px; }
+      .timeline li { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; }
+      .timeline img { width: 96px; height: 72px; }
+      .updates li { grid-template-columns: 76px 1fr; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="wrap topbar-inner" aria-label="Main navigation">
+      <a class="brand" href="#top">Zhenhao Zhang</a>
+      <div class="nav"><a href="#about">About</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#service">Service</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <section class="hero" id="top" aria-labelledby="name">
+        <div>
+          <h1 id="name">Zhenhao Zhang</h1>
+          <p class="hero-lead">Video Generation &amp; Multimodal</p>
+          <div class="profile-links"><a href="mailto:zhangzhh2024@shanghaitech.edu.cn">Email ↗</a><a href="https://scholar.google.com/citations?user=dV36HmYAAAAJ" target="_blank" rel="noreferrer">Google Scholar ↗</a><a href="https://github.com/Zhenhao-Zhang" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        </div>
+        <img class="portrait" src="images/me.jpg" alt="Portrait of Zhenhao Zhang" width="240" height="282">
+      </section>
+      <section class="section" id="about" aria-labelledby="about-heading">
+        <h2 class="section-label" id="about-heading">01 / About</h2>
+        <div class="section-body">
+          <p>I am an Incoming PhD Student at the Department of Automation, Tsinghua University supervised by Prof. <a href="https://liuyebin.xyz" target="_blank" rel="noreferrer">Yebin Liu</a>.</p>
+          <p>I will join <a href="https://www.ieg.tencent.com" target="_blank" rel="noreferrer">Tencent IEG</a> as a Qingyun Project Intern(腾讯青云计划) from October 2026 on Video World Model. Before that, I worked at <a href="https://kling.ai" target="_blank" rel="noreferrer">Kling Team</a>, <a href="https://www.kuaishou.com" target="_blank" rel="noreferrer">Kuaishou Technology</a> as an intern from June 2026 to October 2026 on Video Generation Post-training. I worked as a Research Intern at <a href="https://www.tsinghua.edu.cn" target="_blank" rel="noreferrer">Tsinghua University</a> from October 2025 to September 2026 on Video Generation Post-training.  I worked at <a href="https://www.signalplus.com" target="_blank" rel="noreferrer">Signalplus</a> as an Intern from June 2025 to August 2025 on Agentic Quant Trading Algorithm.</p>
+          <p>My research interests span <strong>Video Generation, Multimodal LLMs, and their applications in 3D vision and Embodied AI</strong>. I actively seek collaborations and friends. Feel free to contact me if you are interested in any of these areas.</p>
+          <p class="note" lang="zh-CN">我正在广泛的寻找科研合作与工业界实习机会，如果您对此感兴趣，欢迎与我联系!</p>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="news-heading">
+        <h2 class="section-label" id="news-heading">02 / News</h2>
+        <div class="section-body"><ol class="updates">
+          <li><time datetime="2026-07">2026.07</time><p><strong>OR-Expert</strong> accepted by ACM Multimedia 2026.</p></li>
+          <li><time datetime="2026-06">2026.06</time><p><strong>DAG</strong> accepted by ECCV 2026.</p></li>
+          <li><time datetime="2026-06">2026.06</time><p>Joined the Kling Team at Kuaishou Technology as an intern.</p></li>
+          <li><time datetime="2026-01">2026.01</time><p><strong>UniHM</strong> accepted by ICLR 2026.</p></li>
+          <li><time datetime="2025-11">2025.11</time><p><strong>SDEval</strong> accepted by AAAI 2026.</p></li>
+          <li><time datetime="2025-10">2025.10</time><p>Joined Tsinghua University as a research intern.</p></li>
+          <li><time datetime="2025-09">2025.09</time><p><strong>OpenHOI</strong> accepted by NeurIPS 2025 as an Oral.</p></li>
+          <li><time datetime="2025-06">2025.06</time><p>Joined SignalPlus as an intern.</p></li>
+          <li><time datetime="2024-09">2024.09</time><p><strong>QVPO</strong> accepted by NeurIPS 2024.</p></li>
+        </ol></div>
+      </section>
+      <section class="section" id="publications" aria-labelledby="publications-heading">
+        <h2 class="section-label" id="publications-heading">03 / Publications</h2>
+        <div class="section-body">
+          <article class="pub"><a href="https://zhangzhh.cn/OpenHOI_page/" target="_blank" rel="noreferrer" aria-label="OpenHOI project"><img src="papers/OpenHOI/OpenHOI.png" alt="OpenHOI research preview" loading="lazy"></a><div><p class="year">NeurIPS 2025 · Oral</p><h3>OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Model</h3><p class="authors"><strong>Zhenhao Zhang</strong>, Ye Shi†, Lingxiao Yang, Suting Ni, Qi Ye, Jingya Wang†</p><div class="paper-links"><a href="https://arxiv.org/abs/2505.18947" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://zhangzhh.cn/OpenHOI_page/" target="_blank" rel="noreferrer">Project ↗</a><a href="https://github.com/Zhenhao-Zhang/OpenHOI" target="_blank" rel="noreferrer">Code ↗</a></div></div></article>
+          <article class="pub"><a href="https://zhangzhh.cn/UniHM_page/" target="_blank" rel="noreferrer" aria-label="UniHM project"><img src="papers/UniHM/UniHM.png" alt="UniHM research preview" loading="lazy"></a><div><p class="year">ICLR 2026 · Poster</p><h3>UniHM: Unified Dexterous Hand Manipulation with Vision Language Model</h3><p class="authors"><strong>Zhenhao Zhang*</strong>, Jiaxin Liu*, Ye Shi†, Jingya Wang†</p><div class="paper-links"><a href="https://arxiv.org/abs/2603.00732" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://zhangzhh.cn/UniHM_page/" target="_blank" rel="noreferrer">Project ↗</a><a href="https://github.com/Zhenhao-Zhang/UniHM" target="_blank" rel="noreferrer">Code ↗</a></div></div></article>
+          <article class="pub"><a href="https://zhangzhh.cn/DAG_page/" target="_blank" rel="noreferrer" aria-label="DAG project"><img src="papers/DAG/DAG.png" alt="DAG research preview" loading="lazy"></a><div><p class="year">ECCV 2026 · Poster</p><h3>Diffusion Models are Open-World Affordance Learners</h3><p class="authors">Hanqing Wang*, <strong>Zhenhao Zhang*</strong>, Kaiyang Ji*, Mingyu Liu, Wenti Yin, Yuchao Chen, Zhirui Liu, Xiangyu Zeng, Tianxiang Gui, Hangxing Zhang, Jiahao Yuan, Zhiqing Cui, Jiaxin Liu, Zhiyuan Ma†, Hui Xiong†</p><div class="paper-links"><a href="https://arxiv.org/abs/2508.01651" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://zhangzhh.cn/DAG_page/" target="_blank" rel="noreferrer">Project ↗</a><a href="https://github.com/hq-King/DAG" target="_blank" rel="noreferrer">Code ↗</a></div></div></article>
+          <article class="pub"><a href="https://arxiv.org/abs/2508.08199" target="_blank" rel="noreferrer" aria-label="Read OR-Expert paper"><img src="papers/OR-Expert/OR-Expert.png" alt="OR-Expert research preview" loading="lazy"></a><div><p class="year">ACM Multimedia 2026 · Poster</p><h3>Generalizable Operating Room Expert with Multimodal Enhancement</h3><p class="authors">Peiqi He*, <strong>Zhenhao Zhang*‡</strong>, Yixiang Zhang, Jiaxin Liu, Xiongjun Zhao†, Shaoliang Peng†</p><div class="paper-links"><a href="https://arxiv.org/abs/2508.08199" target="_blank" rel="noreferrer">Paper ↗</a></div></div></article>
+          <article class="pub"><a href="https://arxiv.org/abs/2508.06142" target="_blank" rel="noreferrer" aria-label="Read SDEval paper"><img src="papers/SDEval/SDEval.png" alt="SDEval research preview" loading="lazy"></a><div><p class="year">AAAI 2026 · Poster</p><h3>SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models</h3><p class="authors">Hanqing Wang, Yuan Tian, Mingyu Liu, <strong>Zhenhao Zhang</strong>, Xiangyang Zhu†</p><div class="paper-links"><a href="https://arxiv.org/abs/2508.06142" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://github.com/hq-King/SDEval" target="_blank" rel="noreferrer">Code ↗</a></div></div></article>
+          <article class="pub"><a href="https://dingsht.tech/qvpo-webpage/" target="_blank" rel="noreferrer" aria-label="QVPO project"><img src="papers/QVPO/QVPO.png" alt="QVPO research preview" loading="lazy"></a><div><p class="year">NeurIPS 2024 · Poster</p><h3>Diffusion-based Reinforcement Learning via Q-weighted Variational Policy Optimization</h3><p class="authors">Shutong Ding, Ke Hu, <strong>Zhenhao Zhang</strong>, Kan Ren, Weinan Zhang, Jingyi Yu, Jingya Wang, Ye Shi†</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.16173" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://dingsht.tech/qvpo-webpage/" target="_blank" rel="noreferrer">Project ↗</a><a href="https://github.com/wadx2019/qvpo/" target="_blank" rel="noreferrer">Code ↗</a></div></div></article>
+        </div>
+      </section>
+      <section class="section" id="experience" aria-labelledby="experience-heading"><h2 class="section-label" id="experience-heading">04 / Experience</h2><div class="section-body"><ul class="timeline">
+        <li><img src="images/tencent.png" alt="Tencent logo" loading="lazy"><div><h3>Tencent IEG</h3><time>2026.10—Present</time><p>Video World Model(Qingyun Project)</p></div></li>
+        <li><img src="images/kuaishou-2.png" alt="Kuaishou logo" loading="lazy"><div><h3>Kling Team, Kuaishou Technology</h3><time>2026.06—2026.10</time><p>Video Generation Post-training</p></div></li>
+        <li><img src="images/tsinghua.png" alt="Tsinghua University logo" loading="lazy"><div><h3>Tsinghua University</h3><time>2025.10—Present</time><p>Video Generation Post-training. Advisor: Prof. Yebin Liu</p></div></li>
+        <li><img src="images/signalplus-1.png" alt="Signalplus logo" loading="lazy"><div><h3>Signalplus</h3><time>2025.06—2025.08</time><p>Agentic Quant Trading Algorithm</p></div></li>
+      </ul></div></section>
+      <section class="section" aria-labelledby="honors-heading"><h2 class="section-label" id="honors-heading">05 / Honors</h2><div class="section-body"><ul class="simple-list">
+        <li><span>2026.5</span>ICML Gold Reviewer, ICML Foundation</li><li><span>2025.10</span>NeurIPS Scholar Award, Neural Information Processing Foundation</li><li><span>2022.06</span>Finalist, America Mathematics Contest in Modeling</li>
+      </ul></div></section>
+      <section class="section" id="service" aria-labelledby="service-heading"><h2 class="section-label" id="service-heading">06 / Academic service</h2><div class="section-body"><ul class="simple-list"><li><span>Journal reviewer</span>TMLR</li><li><span>Conference reviewer</span>NeurIPS, ICLR, ICML, AAAI, CoRL, AISTATS</li></ul></div></section>
+    </div>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><p>Zhenhao Zhang · Video Generation and Multimodal</p><div><a href="mailto:zhangzhh2024@shanghaitech.edu.cn">Email</a> · <a href="https://scholar.google.com/citations?user=dV36HmYAAAAJ" target="_blank" rel="noreferrer">Scholar</a> · <a href="https://github.com/Zhenhao-Zhang" target="_blank" rel="noreferrer">GitHub</a></div><p>© 2026</p></div></footer>
+</body>
+</html>
