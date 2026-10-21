@@ -526,9 +526,9 @@ mark {
 
 .experience-item {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 210px minmax(0, 1fr);
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   padding: 22px 0;
 }
 
@@ -806,8 +806,12 @@ mark {
   }
 
   .experience-item {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     gap: 12px;
+  }
+
+  .experience-item h3 {
+    overflow-wrap: anywhere;
   }
 
   .logo-box {
