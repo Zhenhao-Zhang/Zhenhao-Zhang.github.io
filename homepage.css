@@ -95,7 +95,6 @@ button {
   position: sticky;
   z-index: 20;
   top: 0;
-  border-bottom: 1px solid var(--line);
   background: var(--page);
 }
 
@@ -169,7 +168,6 @@ button {
   align-items: center;
   gap: 72px;
   padding-block: 72px;
-  border-bottom: 1px solid var(--line);
 }
 
 .eyebrow {
@@ -247,7 +245,6 @@ h1 {
   grid-template-columns: 140px minmax(0, 1fr);
   gap: 50px;
   padding-block: 62px;
-  border-bottom: 1px solid var(--line);
 }
 
 .section-kicker h2 {
@@ -305,8 +302,7 @@ h1 {
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr);
   gap: 18px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
 }
 
 .news-list li:first-child {
@@ -342,7 +338,6 @@ mark {
 .experience-section,
 .recognition {
   padding-block: 62px;
-  border-bottom: 1px solid var(--line);
 }
 
 .research-heading {
@@ -415,15 +410,17 @@ mark {
 }
 
 .publication-list {
-  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 14px;
 }
 
 .publication {
   display: grid;
   grid-template-columns: 210px minmax(0, 1fr);
   gap: 28px;
-  padding-block: 28px;
-  border-bottom: 1px solid var(--line);
+  padding: 18px;
+  border-radius: 6px;
+  background: var(--surface);
 }
 
 .publication[hidden] {
@@ -435,9 +432,8 @@ mark {
   align-self: start;
   display: block;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  background: var(--surface);
+  border-radius: 4px;
+  background: var(--page);
   text-decoration: none;
 }
 
@@ -534,11 +530,6 @@ mark {
   align-items: center;
   gap: 24px;
   padding: 22px 0;
-  border-top: 1px solid var(--line);
-}
-
-.experience-item:last-child {
-  border-bottom: 1px solid var(--line);
 }
 
 .logo-box {
@@ -586,12 +577,7 @@ mark {
   grid-template-columns: 90px minmax(0, 1fr);
   gap: 18px;
   padding: 13px 0;
-  border-top: 1px solid var(--line);
   font-size: 13px;
-}
-
-.recognition-card li:last-child {
-  border-bottom: 1px solid var(--line);
 }
 
 .service-card li {
