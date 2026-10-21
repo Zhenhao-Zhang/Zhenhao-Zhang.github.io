@@ -535,16 +535,18 @@ mark {
 .logo-box {
   display: grid;
   width: 100%;
-  height: 54px;
-  padding: 4px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
   place-items: center;
+  overflow: hidden;
 }
 
 .logo-box img {
+  display: block;
   width: 100%;
   height: 100%;
   max-height: none;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .experience-item time {
@@ -809,7 +811,7 @@ mark {
   }
 
   .logo-box {
-    height: 46px;
+    height: auto;
   }
 
   .recognition-card li,
