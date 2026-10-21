@@ -549,6 +549,12 @@ mark {
   object-fit: contain;
 }
 
+.logo-box img.kling-logo {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
+}
+
 .experience-item time {
   color: var(--muted);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
