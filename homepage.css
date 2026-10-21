@@ -542,8 +542,9 @@ mark {
 
 .logo-box img {
   width: 100%;
-  max-height: 46px;
-  object-fit: contain;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
 }
 
 .experience-item time {
