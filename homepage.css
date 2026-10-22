@@ -550,9 +550,11 @@ mark {
 }
 
 .logo-box img.kling-logo {
-  object-fit: cover;
+  width: 92%;
+  height: auto;
+  object-fit: contain;
   object-position: center;
-  transform: scale(1.2);
+  transform: none;
 }
 
 .experience-item time {
